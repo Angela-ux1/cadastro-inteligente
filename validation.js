@@ -5,13 +5,13 @@ const confirmar = document.getElementById('confirmar');
 const form = document.getElementById('cadastroForm');
 const btn = document.getElementById('btn');
 
-// Eventos
+
 nome.addEventListener('blur', () => validarCampo(nome, validarNome));
 email.addEventListener('blur', () => validarCampo(email, validarEmail));
 senha.addEventListener('input', () => validarCampo(senha, validarSenha));
 confirmar.addEventListener('blur', () => validarCampo(confirmar, validarConfirmar));
 
-// Função genérica
+
 function validarCampo(input, funcao) {
   const erro = document.getElementById(input.id + '-error');
   const resultado = funcao(input.value);
@@ -27,7 +27,7 @@ function validarCampo(input, funcao) {
   }
 }
 
-// Validações
+
 function validarNome(valor) {
   if (valor.trim() === '') return { valido: false, mensagem: 'Nome obrigatório' };
   if (valor.length < 3) return { valido: false, mensagem: 'Mínimo 3 caracteres' };
@@ -55,7 +55,7 @@ function validarConfirmar(valor) {
   return { valido: true };
 }
 
-// Submit
+
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
